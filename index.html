@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vaccify - Coming Soon</title>
+    <title>Vaccify - A decentralized open-source vaccination passporting solution</title>
     <!-- favicon CSS -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <!-- google fonts -->
@@ -29,85 +29,679 @@
         window.onload = function () {
             document.getElementById('contact-form').addEventListener('submit', function (event) {
                 event.preventDefault();
-                emailjs.sendForm('gmail-service', 'contact_form', this);
-                alert("We will ping you as soon as our website goes live, Thank you!");
+                emailjs.sendForm('gmail-service', 'contact_form', this)
+                alert("Your response have been submitted, Thank you!");
             });
         }
     </script>
 </head>
 
 <body class="" data-spy="scroll" data-target="#navbar-nav">
+
+    <!-- =========== Preloader Start ============ -->
+    <div class="preloader-main">
+        <div class="preloader-wapper">
+            <svg class="preloader" xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="200">
+                <defs>
+                    <filter id="goo" x="-40%" y="-40%" height="200%" width="400%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -8"
+                            result="goo" />
+                    </filter>
+                </defs>
+                <g filter="url(#goo)">
+                    <circle class="dot bg-fill-primary " cx="50" cy="50" r="25" />
+                    <circle class="dot" cx="50" cy="50" r="25" fill="#4c83ff" />
+                </g>
+            </svg>
+            <div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </div>
+    <!-- =========== Preloader End ============ -->
     <div class="main">
         <!-- =========== Start of Navigation (main menu) ============ -->
-        <header class="navbar navbar-expand-lg navbar-light">
+        <header class="navbar navbar-sticky navbar-expand-lg navbar-dark">
             <div class="container position-relative">
-                <a class="navbar-brand mx-auto mt-2 mt-md-3 text-center" href="index.html">
-                    <img class="navbar-brand__regular" style="max-width: 70%;" src="img/brand-logo-color.png"
+                <a class="navbar-brand mr-70" href="#home">
+                    <img class="navbar-brand__regular" style="max-width: 60%;" src="img/brand-logo-white.png"
                         alt="brand-logo">
-                    <img class="navbar-brand__sticky" style="max-width: 70%;" src="img/brand-logo-color.png"
+                    <img class="navbar-brand__sticky" style="max-width: 60%;" src="img/brand-logo-color.png"
                         alt="sticky brand-logo">
                 </a>
+                <!--  End of brand logo -->
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- end of Nav toggler -->
+
+                <div class="navbar-inner">
+                    <!--  Nav close button inside off-canvas/ mobile menu -->
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- end of Nav Toggoler -->
+                    <nav>
+                        <ul class="navbar-nav" id="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#features">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#how-it-works">How it works</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#demo">Demo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#faqs">FAQs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#partners">Partners</a>
+                            </li>
+                        </ul>
+                        <!-- end of nav menu items -->
+                    </nav>
+                </div>
+                <!-- <div class="flex-row ml-lg-auto d-md-flex mr-70 mr-lg-0 d-none d-sm-inline-block">
+                    <a href="#" class="btn btn--outline btn--sm btn-3d-hover btn-splash-hover">
+                        <span class="btn__text">Download Primer</span>
+                    </a>
+                </div> -->
+                <!-- end of nav cta button -->
             </div>
             <!-- end of container -->
         </header>
         <!-- =========== End of Navigation (main menu)  ============ -->
 
-        <!-- =========== Start of Body  ============ -->
-        <section class="space h-lg-100vh d-flex align-items-center justify-content-center">
-            <div class="container d-flex">
-                <div class="row d-flex align-items-center justify-content-center">
-                    <div class="col-12 col-md-8 col-lg-6 mx-auto mb-50 mb-lg-0 pt-5 pt-lg-0 ">
-                        <img src="img/comming-soon.png" alt="error-page">
-                    </div>
-                    <div class="col-12 col-md-8 col-lg-5 mx-auto ml-lg-auto text-center text-lg-left">
-                        <div class="mb-30">
-                            <h1 class="color-primary h3-font mb-20">We're coming soon. </h1>
-                            <p>Our website is under construction. We'll be here soon with our new awesome site,
-                                subscribe to be notified.</p>
-                        </div>
-                        <!-- end of image -->
+        <!-- =========== Start of Hero ============ -->
+        <section class="space--lg hero hero--dark bg-color-primary" id="home">
+            <div class="background-holder z-index-1">
+                <img src="img/hero-10.png" alt="hero-image" class="background-image-holder">
+            </div>
+            <!-- end background image -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+                        <div class="d-lg-flex align-items-lg-center position-relative text-center mb-100">
+                            <div class="hero-content hero-content--center mx-auto">
+                                <h1 class="hero__title">An open-source<br> Vaccination Passporting
+                                    Solution.</h1>
+                                <p class="lead hero__description">A blockchain based open-source
+                                    solution that enables governance over<br> digital vaccination
+                                    certificates issuance and verification <br> in a privacy-preserving manner.</p>
 
-                        <ul class="countdown d-flex mb-40 justify-content-center justify-content-lg-start" id="date"
-                            data-date="June 29, 2020">
+                                <div
+                                    class="button-group align-items-center flex-column flex-sm-row justify-content-sm-center">
 
-                            <li class="d-flex flex-column mr-60 text-left">
-                                <span class="countdown__count h3-font font-w-700 color-primary" id="days"></span>
-                                <span>Days</span>
-                            </li>
 
-                            <li class="d-flex flex-column mr-60 text-left">
-                                <span class="countdown__count h3-font font-w-700 color-primary" id="hours"></span>
 
-                                <span>Hours</span>
-                            </li>
+                                    <a href="#"
+                                        class="mr-sm-3 mb-10 mb-sm-0 box-shadow-2 rounded-md btn-3d-hover transition-default">
+                                        <img src="img/app-store-md.png" class="rounded-md" alt="app-store">
+                                    </a>
+                                    <a href="#" class="box-shadow-2 rounded-md btn-3d-hover transition-default">
+                                        <img src="img/google-play-md.png" class="rounded-md" alt="google-play">
+                                    </a>
 
-                            <li class="d-flex flex-column mr-60 text-left">
-                                <span class="countdown__count h3-font font-w-700 color-primary" id="minutes"></span>
-                                <span>Minutes</span>
-                            </li>
 
-                            <li class="d-flex flex-column text-left">
-                                <span class="countdown__count h3-font font-w-700 color-primary" id="seconds"></span>
-                                <span>Seconds</span>
-                            </li>
-                        </ul>
-                        <!-- end of countdown -->
-                        <form id="contact-form" class="form form--sm position-relative">
-                            <div class="input-group mb-3 mb-sm-0 z-index1">
-                                <input type="email" name="user_email" class="form-control"
-                                    placeholder="Enter your email address" aria-label="Recipient's username">
+
+                                </div>
+                                </br>
+                                <div style="color:white; font-size: 20pt;">
+                                    Available Soon
+                                </div>
                             </div>
-                            <button class="btn btn--submit btn--bg-primary pos-abs-top-right" type="submit">
-                                <span class="btn__text">Notify me</span>
-                            </button>
-                        </form>
-                        <!-- end of form -->
+                            <!-- end of content -->
+                        </div>
+                    </div>
+                    <!-- end of col -->
+                </div>
+                <!-- end of row -->
+            </div>
+            <!-- end of container -->
+            <div class="hero__shape">
+                <img src="img/hero-10-wave.svg" alt="hero bg" class="svg">
+            </div>
+            <!-- end of hero svg shape -->
+        </section>
+        <!-- =========== End of Hero ============ -->
+
+        <!-- =========== Start of Features ============ -->
+        <section class="space-top" id="features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-10 col-lg-7 col-xl-6 mx-auto">
+                        <div class="section-title reveal text-center mb-80">
+                            <p class="mb-10 text-uppercase font-w-700">Why use Vaccify?</p>
+                            <h3>A simple, proven way to govern vaccination certificates.</h3>
+                        </div>
+                        <!-- end of section title -->
+                    </div>
+                </div>
+                <!-- end of row -->
+                <div class="row border-bottom-light space-bottom reveal">
+                    <div class="col-12 col-md-6 col-lg-4 mb-30 mb-lg-0">
+                        <div class="features">
+                            <div class="d-flex mb-20">
+                                <span class="mr-20">
+                                    <img src="img/family.png" alt="family">
+                                </span>
+                                <h5>Issuer</h5>
+                            </div>
+                            <p>Issue reliable
+                                blockchain-based vaccination certificates to people who have been vaccinated.
+                                Enabling
+                                your institution to take a leap in digital trust, providing consumers a secure
+                                service.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- end of col -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-30 mb-lg-0">
+                        <div class="features">
+                            <div class="d-flex mb-20">
+                                <span class="mr-20">
+                                    <img src="img/b-meeting.png" alt="communication">
+                                </span>
+                                <h5>Holder</h5>
+                            </div>
+                            <p>
+                                Recieve and store proof of vaccination certificates in your
+                                mobile wallet app.
+                                Allowing you to digital prove it along with more control over managing your vaccinations
+                                and it's data.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- end of col -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-30 mb-lg-0">
+                        <div class="features">
+                            <div class="d-flex mb-20">
+                                <span class="mr-20">
+                                    <img src="img/filter-organization.png" alt="management">
+                                </span>
+                                <h5>Verifier</h5>
+                            </div>
+                            <p>Request and verify vaccination certificates anywhere in the
+                                world. Verifier institutions
+                                can simple engage in either face-2-face or online verification of consumers
+                                vaccination status.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- end of col -->
+                </div>
+                <!-- end of row -->
+            </div>
+            <!-- end of container -->
+        </section>
+        <!-- =========== End of Features ============ -->
+
+        <!-- =========== Start of Features Tab Slider ============ -->
+        <section class="bg-color-primary features-custom-container">
+            <div class="overlap overlap--lg overlap--gray z-index1 d-none d-xl-block"></div>
+            <div class="content-wrapper">
+                <div class="container">
+                    <div class="row align-items-center align-items-xl-start">
+                        <div class="col-12 col-md-6 col-xl-6 mb-md-40 mb-xl-0 mt-xl-5">
+                            <p class="lead mb-10 font-w-700 text-uppercase">Everything on mobile</p>
+                            <h3 class="mb-20">Use your smartphone to prove you are vaccinated.</h3>
+                            <p class="mb-30 mb-lg-0">Vaccify is an open-source decentralized digtial wallet developed
+                                for the purpose of
+                                storing and sharing vaccination certificates especially SARS-CoV-2. While preserving
+                                privacy and giving you back control of your data.</p>
+                        </div>
+                        <!-- end of col -->
+                        <div class="col-12 col-md-5 offset-md-1 offset-xl-0 col-xl-6 z-index2 reveal">
+                            <picture class="device-image"><img src="img/mobile-1.png" alt="mobile"></picture>
+                        </div>
+                        <!-- end of col -->
+                    </div>
+                    <!-- end of row -->
+                </div>
+                <!-- end of container -->
+            </div>
+            <!-- end of container -->
+            <div class="features features--slider-2 pt-100 mt-xl-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="slider slider-tabs mb-20">
+                                <div class="slide"><button class="slider-tab">Digital Identity</button></div>
+                                <div class="slide"><button class="slider-tab">Encryption</button></div>
+                                <div class="slide"><button class="slider-tab">Control</button></div>
+                            </div>
+                            <!-- end of slider tab -->
+                            <div class="slider slider-contents">
+                                <div class="slide">
+                                    <p>Vaccify creates a blockchain based digital identity also known as
+                                        Self-Soverign-Identity. Securing your identity
+                                        using biometrics or a passcode. This decentralized identity allows you to prove
+                                        certain facts about yourself digitally over internet replacing any
+                                        paper-based credentials.</p>
+                                </div>
+                                <!-- end of single item -->
+                                <div class="slide">
+                                    <p>High-level of enryption is used to make sure that your data is protected beyond
+                                        any doubts. You
+                                        control your private keys making you and only you the sole owner of your data.
+                                        Not even TrustNet Pakistan can see what you store in your digital wallets.
+                                    </p>
+                                </div>
+                                <!-- end of single item -->
+                              
+                                <div class="slide">
+                                    <p>Issuers of vaccination certificate governs the issuing and revocation of
+                                        certificates. Whereas the verifier can only validate your vaccination
+                                        certificate is legit. No information is ever shared without your consent, your
+                                        biometric validation is mendatory before allowing any decryption process or
+                                        information sending process.</p>
+                                </div>
+
+                                <!-- end of single item -->
+                            </div>
+                            <!-- end of slider content -->
+                        </div>
+                        <!-- end of col -->
+                    </div>
+                    <!-- end of row -->
+                </div>
+                <!-- end of container -->
+            </div>
+            <!-- end of features -->
+        </section>
+        <!-- =========== End of Features Tab Slider ============ -->
+
+
+        <!-- =========== Start of Process ============ -->
+        <section class="space-top bg-color-grey" id="how-it-works">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-9 mx-auto">
+                        <div class="section-title reveal text-center mb-80 mb-sm-50">
+                            <h3 class="mb-3 font-w-400">How vaccify works for you?</h3>
+                            <p class="lead font-w-400">In the post-COVID world a formal, provable digital trust is
+                                required in society to enable people along with public and private institutes to govern
+                                SARS-CoV-2 vaccination credentails.</p>
+                        </div>
+                        <!-- end of section title -->
+                    </div>
+                </div>
+                <!-- end of row -->
+                <div class="working-process reveal">
+                    <div class="row space-bottom">
+                        <div class="col-12 col-md-4">
+                            <div class="working-process-block text-center">
+                                <span class="mb-30 icon-dotted position-relative">
+                                    <i class="icon icon-pin-2"></i>
+                                </span>
+                                <h4 class="font-size-21 mb-10">
+                                    Issue Certificates
+                                </h4>
+                                <p>Quick touch less QR issues vaccination passporting certifcates.</p>
+                            </div>
+                        </div>
+                        <!-- end of col -->
+                        <div class="col-12 col-md-4">
+                            <div class="working-process-block text-center">
+                                <span class="mb-30 icon-dotted position-relative">
+                                    <i class="icon icon-layout-11"></i>
+                                </span>
+                                <h4 class="font-size-21 mb-10">
+                                    Prove Vaccinations
+                                </h4>
+                                <p>Control your vaccinations records and prove f2f or over the internet safely.</p>
+                            </div>
+                        </div>
+                        <!-- end of col -->
+                        <div class="col-12 col-md-4">
+                            <div class="working-process-block text-center">
+                                <span class="mb-30 icon-dotted position-relative">
+                                    <i class="icon icon-spaceship"></i>
+                                </span>
+                                <h4 class="font-size-21 mb-10">
+                                    Verify Immunity
+                                </h4>
+                                <p>Validate immunity of people, enabling your organization to run smoothly.</p>
+                            </div>
+                        </div>
+                        <!-- end of col -->
+                    </div>
+                    <!-- end of row -->
+                </div>
+                <!-- end of working process -->
+            </div>
+            <!-- end of container -->
+        </section>
+        <!-- =========== End of Process ============ -->
+
+        <!-- =========== Start of Features-2 ============ -->
+        <section class="space border-bottom-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-10 col-lg-7 col-xl-6 mx-auto">
+                        <div class="section-title reveal text-center mb-80">
+                            <p class="mb-10 text-uppercase font-w-700">More than a software</p>
+                            <h3>Understand high-level vaccination certificate issuance and verification.</h3>
+                        </div>
+                        <!-- end of section title -->
+                    </div>
+                    <!-- end of col -->
+                </div>
+                <!-- end of row -->
+                <div class="row d-lg-flex flex-column-reverse flex-lg-row align-items-center ">
+                    <!-- enf of col -->
+                    <div class="col-12 col-lg-6 col-xl-6 mb-50 mb-lg-0 text-center reveal">
+                        <picture><img class="rounded-default" src="img/issuer-flow.png" alt="team-image"></picture>
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-6 mb-50 mb-lg-0 text-center reveal">
+                        <picture><img class="rounded-default" src="img/verifier-flow.png" alt="team-image"></picture>
+                    </div>
+                    <!-- end of image -->
+                </div>
+                <!-- end of row -->
+            </div>
+            <!-- end of container -->
+        </section>
+        <!-- =========== End of Features-2 ============ -->
+
+
+        <!-- =========== Start of Content Block ============ -->
+        <section class="space-bottom switchable d-md-flex align-items-md-center border-bottom-light pt-100" id="demo">
+            <div class="col-md-6 pl-md-0 mb-40 mb-md-0 text-center text-md-left">
+                <picture class="switchable__image">
+                    <img src="img/admin-dashboard-2.png" alt="dashboard-image">
+                </picture>
+            </div>
+            <!-- end of image -->
+
+            <div class="switchable__text">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center text-md-left ml-md-auto reveal">
+                            <h3 class="mb-4">Try out the demo <br> its open-source and amazing.
+                            </h3>
+                            <p class="mb-5">Our demo comprises of a <b>Vaccination Isser Institute</b> <i>(Hospital)</i>
+                                and a
+                                <b>Vaccination
+                                    Verifier Organization</b> <i>(Airline)</i>. You can run the issuer demo app to issue
+                                yourself a dummy
+                                SARS-CoV-2
+                                Certifcate and get it verified at verifer app while mimicking booking plane ticktes or
+                                flight boarding.</p>
+                            <span>
+                                <a target="_blank" href="coming-soon.html"
+                                    class="btn btn--bg-primary btn-3d-hover btn-splash-hover">Try
+                                    Demo</a>
+
+                                <a target="_blank" href="https://github.com/TrustNetPK"
+                                    class="btn btn--bg-primary btn-3d-hover btn-splash-hover">
+                                    See Github</a>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- end of content -->
         </section>
-        <!-- =========== End of Body ============ -->
+        <!-- =========== End of Content Block ============ -->
 
+
+
+
+        <!-- =========== Start of FAQ ============ -->
+        <section class="space" id="faqs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6 mx-auto">
+                        <div class="section-title reveal text-center mb-80 mb-sm-50 reveal">
+                            <h3 class="mb-3 font-w-400">Frequently Asked Questions</h3>
+                            <p class="lead font-w-400">In this section you will find answers to the most common
+                                questions about Vaccify. </p>
+                        </div>
+                        <!-- end of section title -->
+                    </div>
+                    <!-- end of col -->
+                </div>
+                <!-- end of row -->
+                <div class="row justify-content-between">
+                    <div class="col-12 col-xl-11 mx-auto">
+                        <div class="row justify-content-between reveal">
+                            <div class="col-12 col-md-6 mb-40 px-lg-4">
+                                <h5 class="mb-2">What is a vaccify certificate?</h5>
+                                <p>A vaccify certificate represents a digital proof of your vaccination for any
+                                    disease. Especially SARS-CoV-2 vaccination credential is used to prove your status
+                                    of COVID-19 vaccination.</p>
+                            </div>
+                            <!-- end of single item -->
+                            <div class="col-12 col-md-6 mb-40 px-lg-4">
+                                <h5 class="mb-2">How does vaccify work?</h5>
+                                <p>A medical institute can vaccinate you and issue you a digital certificate, which is
+                                    kept in your Vaccify digital wallet app. This certificate in your app can be
+                                    later verified by anyone you allow.</p>
+                            </div>
+                            <!-- end of single item -->
+                        </div>
+                        <!-- end of single col -->
+                        <div class="row justify-content-between reveal">
+                            <div class="col-12 col-md-6 mb-40 px-lg-4">
+                                <h5 class="mb-2">Can it help post-COVID society?</h5>
+                                <p>Post-Pandamic world will be radically different. The people
+                                    would need to prove
+                                    their immunity so they can travel without risk of being infected and infecting
+                                    others. We are
+                                    anticipating a dire need in the future for COVID vaccination credentials.</p>
+                            </div>
+                            <!-- end of single item -->
+                            <div class="col-12 col-md-6 mb-40 px-lg-4">
+                                <h5 class="mb-2">Who control it and what?</h5>
+                                <p>You fully control your data and the private key of your decentralized
+                                    identity, and no
+                                    one except you has
+                                    access to it. Issuers only hold authority over issuing certificates and
+                                    revoking them if needed. Verifiers can only verify if someone is vaccinated.</p>
+                            </div>
+                            <!-- end of single item -->
+                        </div>
+                        <!-- end of single col -->
+                        <div class="row justify-content-between reveal">
+                            <div class="col-12 col-md-6 mb-40 px-lg-4">
+                                <h5 class="mb-2">How trustworthy is it?</h5>
+                                <p>Vaccify takes advantage of the immutability and trustworthiness that blockchain has
+                                    to offer. Certificates issued on the blockchain are reliable and immutable, and can
+                                    be revoked if needed.</p>
+                            </div>
+                            <!-- end of single item -->
+                            <div class="col-12 col-md-6 mb-40 px-lg-4">
+                                <h5 class="mb-2">How secure is it?</h5>
+                                <p>All your data and it's commununcation channels are encrypted end-to-end. You and only
+                                    you
+                                    control you digital identity, and your information is not shared with anyone unless
+                                    you approve.</p>
+                            </div>
+                            <!-- end of single item -->
+                        </div>
+                        <!-- end of single col -->
+                    </div>
+                </div>
+                <!-- end of row -->
+                <div class="row">
+                    <div class="col-12 text-md-center mt-20 reveal">
+                        <span>Still have a question? Reach out to us: <a href="mailto:support@trust.net.pk"
+                                class="color-primary"> support@trust.net.pk</a></span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- =========== End of FAQ ============ -->
+
+
+
+
+        <!-- =========== Start of Partner Orgs ============ -->
+        <section class="bg-color-primary space position-relative" id="technologies">
+            <div class="background-holder background-holder--top">
+                <img src="img/testimonial-bg.svg" alt="pattern" class="background-image-holder">
+            </div>
+            <div class="container">
+                <div class="col-12 col-lg-9 mx-auto">
+                    <div class="section-title reveal text-center mb-80 mb-sm-50">
+                        <h3 class="mb-3">Powered By</h3>
+                        <p class="lead">Hyperledger open-source blockchain based solutions are used to build
+                            vaccify.<br /> British Columbia's VON Network test ledger is used to run the demos.</p>
+                    </div>
+                    <!-- end of section title -->
+                </div>
+
+                <div class="row mt-100">
+
+                    <div
+                        class="col-12 mx-auto d-flex flex-column flex-md-row justify-content-between text-center reveal">
+                        <span class="mb-30 mb-md-0"><a href="https://www.hyperledger.org/use/hyperledger-indy"> <img
+                                    src="img/indy-logo.png" alt="client"></a></span>
+                        <span class="mb-30 mb-md-0"><a href="https://www.hyperledger.org/use/aries"> <img
+                                    src="img/aries-logo.png" alt="client"></a></span>
+                        <span class="mb-30 mb-md-0"><a href="https://vonx.io/about/"> <img src="img/von-logo.png"
+                                    alt="client"></a></span>
+                        <span class="mb-30 mb-md-0"><a href="https://www2.gov.bc.ca/gov/content/home"> <img
+                                    src="img/bcgov-logo.png" alt="client"></a></span>
+                    </div>
+                    <!-- end of clients logo col -->
+                </div>
+
+                <!-- end of clients logo row -->
+            </div>
+            <!-- end of container -->
+        </section>
+        <!-- =========== End of Partner Orgs ============ -->
+
+        <!-- =========== Start of Techstack ============ -->
+        <section class="bg-color-grey space position-relative" id="partners">
+            <div class="background-holder background-holder--top">
+                <img src="img/pricing-bg.svg" alt="pattern" class="background-image-holder">
+            </div>
+            <div class="container">
+                <div class="col-12 col-lg-9 mx-auto">
+                    <div class="section-title reveal text-center mb-80 mb-sm-50">
+                        <h3 class="mb-3">Community Partners</h3>
+                        <p class="lead">Vaccify is built under TrustNet's COVID Initiative which is part of a
+                            global covid credentials initaitve and various Pakistani
+                            organizations have contributed to it development.</p>
+                    </div>
+                    <!-- end of section title -->
+                </div>
+
+                <div class="row mt-100">
+
+                    <div
+                        class="col-12 mx-auto d-flex flex-column flex-md-row justify-content-between text-center reveal">
+                        <span class="mb-30 mb-md-0"><a href="https://www.xord.one"> <img src="img/logo-xord.png"
+                                    alt="Xord">
+                            </a></span>
+                        <span class="mb-30 mb-md-0"><a href="https://www.covidcreds.com"><img src="img/cci-logo.png"
+                                    alt="COVID Credentials Initiative"></a></span>
+                        <span class="mb-30 mb-md-0"><a href="https://www.trust.net.pk"><img src="img/tnp-logo.png"
+                                    alt="TrustNet Pakistan"></a></span>
+                        <span class="mb-30 mb-md-0"><a href="https://www.pakistanblockchaininstitute.org"><img
+                                    src="img/pbi-logo.png" alt="Pakistan Blockchain Institute"></a></span>
+                    </div>
+                    <!-- end of clients logo col -->
+                </div>
+
+                <!-- end of clients logo row -->
+            </div>
+            <!-- end of container -->
+        </section>
+        <!-- =========== End of Techstack ============ -->
+
+
+        <section class="bg-color-grey space position-relative" id="partners">
+            <div class="background-holder background-holder--top">
+                <img src="img/pricing-bg.svg" alt="pattern" class="background-image-holder">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 text-center mx-auto reveal">
+                            <h5 class="mb-20">Provide your email to join us</h5>
+                            <!-- <p class="lead mb-50">Millions of people around the world have already made xPider the place
+                                where their dream happens.</p> -->
+                            <div class="position-relative text-center">
+                                <form id="contact-form" action="#" class="form form-subscription">
+                                    <div class="input-group mb-3 mb-sm-0">
+                                        <input type="email" name="user_email" class="form-control"
+                                            placeholder="Enter your email to join" required>
+                                    </div>
+                                    <button class="btn btn--submit btn--color-primary btn--bg-white" type="submit">
+                                        <span class="btn__text">Join Us</span>
+                                    </button>
+                                </form>
+                                <span class="type--fine-print">Join us in taking vaccify to pilot.</span>
+                            </div>
+                        </div>
+                        <!-- end of col -->
+                    </div>
+                    <!-- end of row -->
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =========== Start of footer height emulator============ -->
+        <!-- this height emulator helps to calculate the fixed footer height  -->
+        <div class="height-emulator d-none d-lg-block"></div>
+        <!-- =========== End of footer height emulator============ -->
+
+        <!-- =========== Start of Footer ============ -->
+        <footer class="footer footer--fixed">
+            <div class="py-5">
+                <div class="container">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-12 col-lg-4 mb-20 mb-lg-0 text-center text-lg-left">
+                            <span class="mb-20"><a href="index.html"><img style="max-width: 60%;"
+                                        src="img/brand-logo-color.png" alt="logo"></a></span>
+                            <p class="color-light-secondary-2">© Vaccify, TrustNet Pakistan 2020.
+                                <br> All rights reserved.</p>
+                        </div>
+                        <!-- end of col -->
+                        <div class="col-12 col-lg-4 mb-20 mb-lg-0">
+                            <nav class="nav justify-content-center">
+                                <ul class="d-flex mb-md-0">
+                                    <!-- <li><a href="#" class="font-w-400">TrustNet PK</a></li> -->
+                                    <li><a target="_blank" href="terms-policy.html" class="font-w-400">Privacy &
+                                            Terms</a></li>
+                                    <li><a target="_blank" href="mailto:support@trust.net.pk" class="font-w-400">Contact
+                                            Us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- end of col -->
+                        <div class="col-12 col-lg-4 mb-20 mb-lg-0 ml-auto">
+                            <ul class="social-lists d-flex justify-content-center justify-content-lg-end mb-0">
+                                <li><a target="_blank" href="https://www.facebook.com/TrustNetPakistan"><i
+                                            class="fa fa-facebook"></i></a></li>
+                                <li><a target="_blank" href="https://twitter.com/TrustNetPK"><i
+                                            class="fa fa-twitter"></i></a></li>
+                                <!-- <li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
+                                <li><a target="_blank"
+                                        href="https://www.youtube.com/channel/UC99t15j-HjJHR8LdgvIMexw"><i
+                                            class="fa fa-youtube-play"></i></a></li>
+                                <li><a target="_blank" href="https://communityinviter.com/apps/trustnetpk/join"><i
+                                            class="fa fa-slack"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end of row -->
+                </div>
+                <!-- end of container -->
+            </div>
+            <!-- end of main footer -->
+        </footer>
+        <!-- =========== End of Footer ============ -->
 
     </div>
     <script src="js/plugins.min.js"></script>
